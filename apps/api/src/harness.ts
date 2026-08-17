@@ -877,7 +877,7 @@ async function startServices(command?: string[]): Promise<Services> {
   );
 
   const nuqPrefetchWorker =
-    config.NUQ_BACKEND === "fdb"
+    config.NUQ_BACKEND === "fdb" || NUQ_WORKER_COUNT === 0
       ? undefined
       : execForward(
           "nuq-prefetch-worker",
@@ -893,7 +893,7 @@ async function startServices(command?: string[]): Promise<Services> {
         );
 
   const nuqReconcilerWorker =
-    config.NUQ_BACKEND === "fdb"
+    config.NUQ_BACKEND === "fdb" || NUQ_WORKER_COUNT === 0
       ? undefined
       : execForward(
           "nuq-reconciler",
