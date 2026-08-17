@@ -1,0 +1,6 @@
+{
+  "deploy": {
+    "numReplicas": 6,
+    "sleepApplication": true
+  }
+}
